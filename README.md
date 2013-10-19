@@ -1,4 +1,4 @@
-django-boilerplate
+{{ project_name }}
 ==================
 
-My preferred Django project setup.
+TODO: Make this text worth its bytes.

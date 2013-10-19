@@ -1,4 +1,9 @@
 *.log
 *.pot
 *.pyc
-local_settings.py
+.DS_Store
+**/settings/database.py
+**/settings/local.py
+bin
+lib
+include
