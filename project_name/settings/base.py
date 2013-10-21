@@ -1,19 +1,7 @@
 # Django settings for {{ project_name }} project.
 
-try:
-    from database import DATABASES
-except ImportError:
-    print 'No database has been configured, disabling database support'
-    DATABASES = {}
-
-    if 'south' in INSTALLED_APPS:
-        INSTALLED_APPS = tuple([x for x in INSTALLED_APPS if x is not 'south'])
-
-from os import path
-
-PROJECT_ROOT = path.abspath(path.join(path.dirname(__file__), '..'))
-
-root = lambda *a: path.abspath(path.join(PROJECT_ROOT, *a))
+# Evaluated configuration values
+from ._pre_config import STATIC_ROOT, MEDIA_ROOT, DATABASES, SECRET_KEY
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -38,20 +26,10 @@ USE_L10N = True
 # If you set this to False, Django will not use timezone-aware datetimes.
 USE_TZ = True
 
-# Absolute filesystem path to the directory that will hold user-uploaded files.
-# Example: "/var/www/example.com/media/"
-MEDIA_ROOT = root('..', 'public_html', 'media')
-
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://example.com/media/", "http://media.example.com/"
 MEDIA_URL = '/media/'
-
-# Absolute path to the directory static files should be collected to.
-# Don't put anything in this directory yourself; store your static files
-# in apps' "static/" subdirectories and in STATICFILES_DIRS.
-# Example: "/var/www/example.com/static/"
-STATIC_ROOT = root('..', 'public_html', 'static')
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
@@ -72,14 +50,12 @@ STATICFILES_FINDERS = (
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
-# Make this unique, and don't share it with anybody.
-SECRET_KEY = '{{ secret_key }}'
-
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
 #     'django.template.loaders.eggs.Loader',
+    'apptemplates.Loader',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -122,6 +98,8 @@ INSTALLED_APPS = (
     # 3rd-party applications
     'debug_toolbar',
     'south',
+    'django_extensions',
+    'annoying'
 ) + PROJECT_APPS
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
