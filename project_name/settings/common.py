@@ -3,7 +3,11 @@
 try:
     from database import DATABASES
 except ImportError:
-    raise SystemExit('Failed to import databases, missing database.py')
+    print 'No database has been configured, disabling database support'
+    DATABASES = {}
+
+    if 'south' in INSTALLED_APPS:
+        INSTALLED_APPS = tuple([x for x in INSTALLED_APPS if x is not 'south'])
 
 from os import path
 
@@ -157,11 +161,16 @@ LOGGING = {
             'level': 'ERROR',
             'filters': ['require_debug_false'],
             'class': 'django.utils.log.AdminEmailHandler'
+        },
+        'console': {
+            'level': 'INFO',
+            'class': 'logging.StreamHandler',
+            'stream': 'ext://sys.stdout'
         }
     },
     'loggers': {
         'django.request': {
-            'handlers': ['mail_admins'],
+            'handlers': ['mail_admins', 'console'],
             'level': 'ERROR',
             'propagate': True,
         },
