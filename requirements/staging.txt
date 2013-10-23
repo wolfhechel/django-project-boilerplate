@@ -1,1 +1,1 @@
--i base.txt
+-r base.txt

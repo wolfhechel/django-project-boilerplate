@@ -34,6 +34,6 @@ if not path.exists(_SECRET_KEY_PATH):
     secret_key = get_random_string(50, allowed_chars)
 
     with open(_SECRET_KEY_PATH, 'w') as _file:
-        _file.write("SECRET_KEY = %s\n" % secret_key)
+        _file.write("SECRET_KEY = '%i'\n" % secret_key)
 
 from secret_key import SECRET_KEY

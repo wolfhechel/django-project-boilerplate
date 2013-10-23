@@ -2,8 +2,9 @@
 *.pot
 *.pyc
 .DS_Store
-**/settings/database.py
-**/settings/local.py
 bin
 lib
 include
+**/settings/database.py
+**/settings/local.py
+**/settings/secret_key.py
