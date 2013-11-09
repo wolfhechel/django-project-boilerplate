@@ -1,16 +1,5 @@
 from os import path
 
-try:
-    from .database import DATABASES
-except ImportError:
-    print 'No database has been configured, disabling database support'
-    DATABASES = {}
-
-    if 'south' in INSTALLED_APPS:
-        INSTALLED_APPS = tuple([x for x in INSTALLED_APPS if x is not 'south'])
-
-from os import path
-
 SETTINGS_ROOT = path.abspath(path.dirname(__file__))
 PROJECT_ROOT = path.abspath(path.join(SETTINGS_ROOT, '..'))
 
@@ -34,6 +23,6 @@ if not path.exists(_SECRET_KEY_PATH):
     secret_key = get_random_string(50, allowed_chars)
 
     with open(_SECRET_KEY_PATH, 'w') as _file:
-        _file.write("SECRET_KEY = '%i'\n" % secret_key)
+        _file.write("SECRET_KEY = '%s'\n" % secret_key)
 
 from secret_key import SECRET_KEY
