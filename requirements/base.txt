@@ -1,4 +1,4 @@
-Django==1.5.4
+Django=={{ docs_version }}
 South
 
 django-annoying
