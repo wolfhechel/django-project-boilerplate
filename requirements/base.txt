@@ -1,4 +1,4 @@
-Django=={{ docs_version }}
+Django=={{ docs_version|default_if_none:"1.5.x" }}
 South
 
 django-annoying

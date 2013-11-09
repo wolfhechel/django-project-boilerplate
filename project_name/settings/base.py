@@ -2,10 +2,10 @@
 Django settings for {{ project_name }} project.
 
 For more information on this file, see
-https://docs.djangoproject.com/en/{{ docs_version }}/topics/settings/
+https://docs.djangoproject.com/en/{{ docs_version|default_if_none:"1.5" }}/topics/settings/
 
 For the full list of settings and their values, see
-https://docs.djangoproject.com/en/{{ docs_version }}/ref/settings/
+https://docs.djangoproject.com/en/{{ docs_version|default_if_none:"1.5" }}/ref/settings/
 """
 
 # Evaluated configuration values
@@ -19,7 +19,7 @@ except ImportError:
     DATABASES = {}
 
 # Internationalization
-# https://docs.djangoproject.com/en/{{ docs_version }}/topics/i18n/
+# https://docs.djangoproject.com/en/{{ docs_version|default_if_none:"1.5" }}/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
 
