@@ -4,3 +4,5 @@ virtualenv .
 
 source bin/activate
 pip install -r requirements/development.txt
+
+rm $0
