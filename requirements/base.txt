@@ -1,6 +1,6 @@
-Django=={{ docs_version|default_if_none:"1.5.x" }}
-South
+Django==1.6
+South==0.8.4
 
-django-annoying
-django-apptemplates
-django-extensions
+-r presets/enhancements.txt
+
+django-reversion==1.8.0
