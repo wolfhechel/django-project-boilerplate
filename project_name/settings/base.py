@@ -18,6 +18,8 @@ except ImportError:
     print 'No database has been configured, disabling database support'
     DATABASES = {}
 
+from .logconfig import LOGGING
+
 # Internationalization
 # https://docs.djangoproject.com/en/{{ docs_version|default_if_none:"1.5" }}/topics/i18n/
 
@@ -112,3 +114,4 @@ DEBUG_TOOLBAR_PANELS = (
     'debug_toolbar.panels.signals.SignalDebugPanel',
     'debug_toolbar.panels.logger.LoggingPanel',
 )
+
