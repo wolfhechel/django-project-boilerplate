@@ -92,7 +92,6 @@ INSTALLED_APPS = (
 
     # 3rd-party applications
     'debug_toolbar',
-    'south',
     'django_extensions',
     'annoying'
 ) + PROJECT_APPS
@@ -111,7 +110,7 @@ DEBUG_TOOLBAR_PANELS = [
     'debug_toolbar.panels.staticfiles.StaticFilesPanel',
     'debug_toolbar.panels.templates.TemplatesPanel',
     'debug_toolbar.panels.cache.CachePanel',
-    'debug_toolbar.panels.signals.SignalsPanel',
+#    'debug_toolbar.panels.signals.SignalsPanel',
     'debug_toolbar.panels.logging.LoggingPanel',
     'debug_toolbar.panels.redirects.RedirectsPanel',
 ]

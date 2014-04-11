@@ -1,5 +1,4 @@
-Django==1.6
-South==0.8.4
+https://www.djangoproject.com/download/1.7b1/tarball/#egg=django==1.7b1
 
 -r presets/enhancements.txt
 
