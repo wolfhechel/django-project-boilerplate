@@ -13,7 +13,7 @@ Assuming you have already installed django systemwide, all you have to do (from
 commandline) is to run 
 
 ```bash
-django-admin.py startproject -e py,txt --template=https://https://github.com/wolfhechel/django-boilerplate/archive/master.zip Project Name <Optional path>
+django-admin.py startproject -e py,txt --template=https://github.com/wolfhechel/django-project-boilerplate/archive/1.6.zip project_name <Optional path>
 ```
 
 From here you're free to modify or re-configure any files you may like!
