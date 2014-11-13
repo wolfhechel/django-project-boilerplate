@@ -13,7 +13,7 @@ Assuming you have already installed django systemwide, all you have to do (from
 commandline) is to run 
 
 ```bash
-django-admin.py startproject -e py,txt --template=https://github.com/wolfhechel/django-project-boilerplate/archive/1.6.zip project_name <Optional path>
+django-admin.py startproject -e py,txt --template=https://github.com/wolfhechel/django-project-boilerplate/archive/1.7.zip project_name <Optional path>
 ```
 
 From here you're free to modify or re-configure any files you may like!
@@ -53,7 +53,6 @@ This is local to the developer only!
 
 ## Enabled applications
 * [django-apptemplates](https://pypi.python.org/pypi/django-apptemplates/)
-* [South](https://pypi.python.org/pypi/South)
 * [django-annoying](https://pypi.python.org/pypi/django-annoying)
 * [django-extensions](https://pypi.python.org/pypi/django-extensions)
 * [django-debug-toolbar](https://pypi.python.org/pypi/django-debug-toolbar)
